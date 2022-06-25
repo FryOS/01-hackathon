@@ -10,7 +10,6 @@ export class ContextMenu extends Menu {
 
         this.el.addEventListener('click', (event) => {
             const type = event.target.dataset.type;
-            console.log(type)
             if(type){
                 const check = this.modules.find((m) => m.type === type);
                 check.trigger();
