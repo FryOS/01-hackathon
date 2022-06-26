@@ -40,3 +40,76 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.show-message{
+    display: table-cell;
+    width: auto;
+    padding: 0px 10px;
+    height: 30px;
+    background: #1b1a1a;
+    border-radius: 10px;
+    /* border: 3px solid #eee; */
+    font-size: 1rem;
+    color: #eee;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    /* display: none; */
+}
+
+.popup {
+    position: absolute;
+    background: #1b1a1a;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    padding-top: 30px;
+}
+
+.popup p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    color: #eee;
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup form input {
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    height: 23px;
+    font-size: 20px;
+    border: 2px solid #000000;
+}
+
+.popup form input[type="submit"] {
+    background: #000000;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+button {
+    border-radius: 25px;
+    /* border: none; */
+    border-color: #343434;
+    background: #eee;
+    color: #000000;
+    font-size: 20px;
+}
