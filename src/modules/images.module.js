@@ -55,6 +55,7 @@ export class ImagesModule extends Module {
                 const isCloseButton = event.target.closest('.modal__close');
                 if (isCloseButton) {
                     modalWindow.setAttribute('hidden', '');
+                    modalWindow.remove();
                 }
             });
 
