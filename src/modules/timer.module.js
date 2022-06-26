@@ -1,4 +1,5 @@
 import {Module} from '../core/module';
+import {startTimer} from '../utils';
 export class TimerModule extends Module {
         
     constructor (type, text) {
@@ -22,39 +23,30 @@ export class TimerModule extends Module {
 
         button.addEventListener('click', (event) => {
             event.preventDefault();
-            const divPopup = document.querySelector('.popup-bg');
-            const div = document.createElement('div');
-            div.className = 'show-message';
-            div.textContent = `Вы ввели ${input.value} минут(а)`;
-            document.body.append(div);
-            divPopup.remove();  
-            let startMin = +input.value * 60;
-            start(startMin);  
             
-            setTimeout(() => {
-                div.remove();
-            }, (startMin+2)*1000);          
-    })
-
-        function startTimer(duration, selector) {
-            let timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-        
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-        
-                selector.textContent = minutes + ":" + seconds;
-        
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-        }
-        
+            if(!document.querySelector('.show-timer')){                
+                const divPopup = document.querySelector('.popup-bg');
+                const div = document.createElement('div');
+                div.className = 'show-timer';
+                div.textContent = `Вы ввели ${input.value} минут(а)`;
+                document.body.append(div);
+                divPopup.remove();  
+                let startMin = +input.value * 60;
+                start(startMin);  
+                
+                setTimeout(() => {
+                    div.remove();
+                }, (startMin+2)*1000); 
+            }
+            else if(document.querySelector('.show-timer')){
+                const divPopup = document.querySelector('.popup-bg');
+                alert("Таймер уже запущен. Дождитесь окончания");
+                divPopup.remove();
+            }                     
+    });
+             
         function start (value) {
-            const display = document.querySelector('.show-message');
+            const display = document.querySelector('.show-timer');
             startTimer(value, display);
         };       
 

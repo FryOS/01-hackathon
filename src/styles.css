@@ -55,6 +55,18 @@ body {
     vertical-align: middle;
 }
 
+.show-timer{
+    display: block;
+    width: auto;   
+    margin: 0 auto;
+    padding: 0px 10px;
+    height: 30px;
+    border-radius: 10px;    
+    font-size: 5rem;
+    color: rgb(27, 3, 3);
+    text-align: center;
+}
+
 .popup-bg {
     position: fixed;
     top: 0;
