@@ -1,6 +1,4 @@
-import {
-    Module
-} from '../core/module'
+import {Module} from '../core/module'
 import {random} from '../utils'
 
 export class ImagesModule extends Module {
@@ -10,10 +8,16 @@ export class ImagesModule extends Module {
 
     trigger() {
 
-        start();
+        const isModalWindow = document.querySelector('.modal');
 
-        const modalWindow = document.querySelector('.modal');
-        modalWindow.removeAttribute('hidden', '');
+        console.log(isModalWindow);
+        if (isModalWindow !== null) {
+            isModalWindow.remove();
+            start();
+
+        } else {
+            start();
+        }
 
         function createModalWindow(num) {
 
@@ -47,19 +51,18 @@ export class ImagesModule extends Module {
         }
 
         function start() {
-            let randomImageNumber =  random(1, 7);
+            let randomImageNumber = random(1, 7);
             createModalWindow(randomImageNumber);
 
             const modalWindow = document.querySelector('.modal');
             modalWindow.addEventListener('click', (event) => {
                 const isCloseButton = event.target.closest('.modal__close');
                 if (isCloseButton) {
-                    modalWindow.setAttribute('hidden', '');
-                    modalWindow.remove();
+                        modalWindow.remove();
                 }
             });
 
+            modalWindow.removeAttribute('hidden', '');
         }
     }
-
 }
