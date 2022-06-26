@@ -3,6 +3,7 @@ import {ContextMenu} from './menu';
 import {BackgroundModule} from './modules/background.module';
 import { SoundModule } from './modules/sound.module';
 import {ShowMessage} from './modules/showMessage.module';
+import {ImagesModule} from './modules/images.module';
 
 const contextMenu = new ContextMenu('#menu');
 contextMenu.open();
@@ -15,3 +16,5 @@ const soundModule = new SoundModule('sound', 'Случайный звук')
 contextMenu.add(soundModule)
 const showMessage = new ShowMessage('showmessage', 'Вызвать сообщение');
 contextMenu.add(showMessage);
+const imagesModule = new ImagesModule('images', 'Посмотреть картинки');
+contextMenu.add(imagesModule);
