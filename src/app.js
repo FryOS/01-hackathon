@@ -4,6 +4,7 @@ import {BackgroundModule} from './modules/background.module';
 import { SoundModule } from './modules/sound.module';
 import {ShowMessage} from './modules/showMessage.module';
 import {ImagesModule} from './modules/images.module';
+import {TimerModule} from './modules/timer.module';
 
 const contextMenu = new ContextMenu('#menu');
 contextMenu.open();
@@ -18,3 +19,5 @@ const showMessage = new ShowMessage('showmessage', 'Вызвать сообще�
 contextMenu.add(showMessage);
 const imagesModule = new ImagesModule('images', 'Посмотреть картинки');
 contextMenu.add(imagesModule);
+const timer = new TimerModule('timer', 'Таймер отсчета');
+contextMenu.add(timer);
