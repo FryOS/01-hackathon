@@ -29,8 +29,7 @@ export class ShowMessage extends Module {
         div.className = 'show-message';
         div.textContent = input.value;
         document.body.append(div);
-        divPopup.remove();
-        
+        divPopup.remove();        
 
         setTimeout(() => {
             div.remove();
